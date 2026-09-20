@@ -1,0 +1,8 @@
+title: AEGIS Redteam
+metrics:
+  - id: bypass_rate
+    label: Bypass rate (latest batch)
+    value: "3/8 seed"
+  - id: corpus_size
+    label: Corpus cases
+    value: "8 seed"

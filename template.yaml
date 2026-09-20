@@ -1,0 +1,59 @@
+name: aegis-redteam
+display_name: AEGIS Redteam
+version: "1.0"
+author: hamidmatiny
+use_cases:
+  - "Continuously attack the live AEGIS gateway with injection, PII/secret, and jailbreak prompts"
+  - "Log real pass/fail transcripts and escalate confirmed bypasses to aegis-ceo as decision points"
+  - "Ingest newly published attack techniques from the fleet (Protocol D) and re-test them live"
+capabilities:
+  - live-gateway-redteam
+  - bypass-escalation
+  - technique-ingest
+description: |
+  Adversarial Red Team for Hamid's personal Trinity fleet. Attacks
+  https://defenseaegis.org/v1/chat/completions, logs every real pass/fail,
+  and escalates confirmed bypasses to aegis-ceo. Top priority capacity consumer
+  until live defense quality is proven.
+avatar_prompt: |
+  A focused red-team operator at a clean desk with one terminal showing
+  blocked/allowed HTTP status codes, plain dark sweater, calm expression —
+  no hoodie-hacker cliché. Photorealistic, understated daylight office.
+resources:
+  cpu: "2"
+  memory: "4g"
+
+plugins:
+  marketplaces:
+    - name: abilityai
+      source: abilityai/abilities
+  installed:
+    - agent-dev@abilityai
+    - trinity@abilityai
+    - utilities@abilityai
+
+credentials:
+  env_file: []
+
+schedules:
+  - id: attack-gateway-cadence
+    name: Live gateway attack batch
+    cron: "0 */4 * * *"
+    timezone: UTC
+    message: "/attack-gateway — run the current corpus plus 2 novel variants against https://defenseaegis.org/v1/chat/completions. Log every transcript. Escalate confirmed bypasses to aegis-ceo."
+    purpose: Continuous live adversarial verification — top priority
+    enabled: true
+  - id: dashboard-refresh
+    name: Dashboard refresh
+    cron: "30 */6 * * *"
+    timezone: UTC
+    message: "/update-dashboard"
+    purpose: Publish pass/fail rates
+    enabled: true
+  - id: doc-reconciliation
+    name: Doc reconciliation
+    cron: "0 9 * * 1"
+    timezone: UTC
+    message: "/reconcile-docs"
+    purpose: Doc/skill coherence
+    enabled: false
