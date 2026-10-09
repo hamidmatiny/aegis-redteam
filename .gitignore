@@ -3,3 +3,8 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# Runtime data: exact attack prompts (incl. unfixed bypasses) and model completions. Not for a public repo.
+memory/attack-corpus.jsonl
+memory/reports/
+.tmp/

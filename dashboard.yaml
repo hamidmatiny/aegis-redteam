@@ -1,8 +1,15 @@
 title: AEGIS Redteam
 metrics:
-  - id: bypass_rate
-    label: Bypass rate (latest batch)
-    value: "3/8 seed"
-  - id: corpus_size
-    label: Corpus cases
-    value: "8 seed"
+  - id: unique_open_vectors
+    label: Unique open vectors (latest live retest = 200)
+    value: "4"
+  - id: benign_false_positives
+    label: Benign controls blocked now
+    value: "3"
+  - id: retest_rows
+    label: Retest rows
+    value: "199"
+  - id: history_live_rows
+    label: History — all-time live rows / returned 200
+    value: "444 / 140"
+as_of: "2026-10-09T00:11:28Z"

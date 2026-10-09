@@ -1,0 +1,14 @@
+{
+  "targets": [
+    {
+      "id": "defenseaegis-demo",
+      "host": "defenseaegis.org",
+      "endpoint": "/v1/chat/completions",
+      "authorization_ref": "owner:hamidmatiny:defenseaegis.org",
+      "authorized_by": "Hamid",
+      "authorized_at": "2026-09-24T21:10:00Z",
+      "scope": "Hamid's own LLM gateway. Pre-authorized because it is his system, not a third party.",
+      "auth": {"type": "none"}
+    }
+  ]
+}
