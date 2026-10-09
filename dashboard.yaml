@@ -8,8 +8,8 @@ metrics:
     value: "3"
   - id: retest_rows
     label: Retest rows
-    value: "199"
+    value: "203"
   - id: history_live_rows
     label: History — all-time live rows / returned 200
-    value: "444 / 140"
-as_of: "2026-10-09T00:11:28Z"
+    value: "450 / 143"
+as_of: "2026-10-09T12:02:15Z"
